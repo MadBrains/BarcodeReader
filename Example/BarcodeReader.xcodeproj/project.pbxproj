@@ -171,7 +171,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				8EC280232B4593AB04B42161 /* [CP] Embed Pods Frameworks */,
-				2C076FDADCF2A851F1D0D862 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,8 +189,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				AD0F6396AAB5038D50B56B3C /* [CP] Embed Pods Frameworks */,
-				710947F85CFD2CDC274BFDCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,43 +263,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C076FDADCF2A851F1D0D862 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeReader_Example/Pods-BarcodeReader_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		710947F85CFD2CDC274BFDCB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeReader_Tests/Pods-BarcodeReader_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8EC280232B4593AB04B42161 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeReader_Example/Pods-BarcodeReader_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BarcodeReader_Example/Pods-BarcodeReader_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BarcodeReader/BarcodeReader.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -311,22 +278,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeReader_Example/Pods-BarcodeReader_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD0F6396AAB5038D50B56B3C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BarcodeReader_Tests/Pods-BarcodeReader_Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarcodeReader_Example/Pods-BarcodeReader_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C1F94C8B1E48D244CD91FB8A /* [CP] Check Pods Manifest.lock */ = {

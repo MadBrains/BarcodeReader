@@ -19,16 +19,16 @@ open class BarcodeReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var barcodeFrameLayer: CALayer?
     
-    let supportedCodeTypes = [AVMetadataObjectTypeUPCECode,
-                              AVMetadataObjectTypeCode39Code,
-                              AVMetadataObjectTypeCode39Mod43Code,
-                              AVMetadataObjectTypeCode93Code,
-                              AVMetadataObjectTypeCode128Code,
-                              AVMetadataObjectTypeEAN8Code,
-                              AVMetadataObjectTypeEAN13Code,
-                              AVMetadataObjectTypeAztecCode,
-                              AVMetadataObjectTypePDF417Code,
-                              AVMetadataObjectTypeQRCode]
+    let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
+                              AVMetadataObject.ObjectType.code39,
+                              AVMetadataObject.ObjectType.code39Mod43,
+                              AVMetadataObject.ObjectType.code93,
+                              AVMetadataObject.ObjectType.code128,
+                              AVMetadataObject.ObjectType.ean8,
+                              AVMetadataObject.ObjectType.ean13,
+                              AVMetadataObject.ObjectType.aztec,
+                              AVMetadataObject.ObjectType.pdf417,
+                              AVMetadataObject.ObjectType.qr]
     
     public var showBarcodeFrame: Bool = true
     
@@ -36,10 +36,14 @@ open class BarcodeReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
     
     public func startReader() {
         
-        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        let captureDevice = AVCaptureDevice.default(for: .video)
         
+        if captureDevice == nil {
+            return
+        }
+
         do {
-            let input = try AVCaptureDeviceInput(device: captureDevice)
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
             
             captureSession = AVCaptureSession()
             
@@ -51,8 +55,12 @@ open class BarcodeReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
             
-            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-            videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+            if captureSession == nil {
+                return
+            }
+            
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             videoPreviewLayer?.frame = layer.bounds
             layer.addSublayer(videoPreviewLayer!)
             
