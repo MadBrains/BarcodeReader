@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BarcodeReader'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A simple barcode reader UIView subclass.'
 
 # This description is used to generate tags and improve search results.
