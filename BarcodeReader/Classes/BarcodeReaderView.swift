@@ -86,9 +86,9 @@ open class BarcodeReaderView: UIView, AVCaptureMetadataOutputObjectsDelegate {
     
     // MARK: - AVCaptureMetadataOutputObjectsDelegate Methods
     
-    public func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
-        if metadataObjects == nil || metadataObjects.count == 0 {
+        if metadataObjects.count == 0 {
             barcodeFrameLayer?.frame = CGRect.zero
             
             delegate?.barcodeOutput(string: nil)
