@@ -28,7 +28,8 @@ Simply create a UIView in interface builder and assign custom class BarcodeReade
   s.source           = { :git => 'https://github.com/MadBrains/BarcodeReader.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/tmukammel'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
+  s.swift_version = "4.2"
 
   s.source_files = 'BarcodeReader/Classes/**/*'
   
