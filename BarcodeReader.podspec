@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BarcodeReader'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'A simple barcode reader UIView subclass.'
 
 # This description is used to generate tags and improve search results.
@@ -29,7 +29,7 @@ Simply create a UIView in interface builder and assign custom class BarcodeReade
   # s.social_media_url = 'https://twitter.com/tmukammel'
 
   s.ios.deployment_target = '11.0'
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 
   s.source_files = 'BarcodeReader/Classes/**/*'
   
